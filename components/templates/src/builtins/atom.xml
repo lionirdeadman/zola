@@ -9,6 +9,9 @@
 	<subtitle>{{ config.description }}</subtitle>
 	{%- endif %}
 	<link href="{{ feed_url | safe }}" rel="self" type="application/atom+xml"/>
+	{%- if config.description %}
+	<link href="{{ config.extra.publisher_url | safe }}" rel="hub" />
+	{%- endif %}
   <link href="
       {%- if section -%}
         {{ section.permalink | escape_xml | safe }}
